@@ -17,7 +17,7 @@ function monthDiff(d1, d2) {
     }
 }
 var diff = monthDiff(new Date(2021, 4, 27), new Date());
-duration.innerHTML = diff;
+// duration.innerHTML = diff;
 
 
 function showMenu() {
