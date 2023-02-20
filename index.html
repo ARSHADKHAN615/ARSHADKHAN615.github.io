@@ -4,508 +4,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <!-- CSS only -->
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Arshad Ali-Resume</title>
-    <script>
-        (function () {
-            emailjs.init("user_fGYmwExcLu4ssQkjoFTDK");
-        })();
-    </script>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/textify.js@2.4.3/dist/Textify.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Arshad Khan</title>
 </head>
 
-<body>
-    <!-- LOADER -->
-    <div class="preloader">
-        <div class="lds-facebook">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+<body class="dark-theme">
+    <div id="fire-fly-container">
+        <canvas id="pixie"></canvas>
     </div>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo" data-scroll>ArShAd KhAn</a>
 
-    <main id="load-page" style="display: none;">
-        <a href="#" class="scroll-top flex_between" data-scroll><i class='bx bx-chevron-up-circle bx-md'
-                data-in-effect="bounceInLeft"></i></a>
-        <!-- NAVIGATION START -->
-        <div class="navigation">
-            <nav class="navbar inner flex_between">
-                <div class="logo">
-                    <a href="#home" class="nav_logo" data-scroll>ArShaD KHaN</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link" data-scroll>
+                            <i class="ri-home-4-line nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link" data-scroll>
+                            <i class="ri-brush-4-line nav__icon"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#qualification" class="nav__link" data-scroll>
+                            <i class="ri-book-open-line"></i> Qualification
+                        </a>
+                    </li>
+                    <!-- <li class="nav__item">
+                        <a href="#services" class="nav__link" data-scroll>
+                            <i class="ri-briefcase-line"></i> Services
+                        </a>
+                    </li> -->
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link" data-scroll>
+                            <i class="ri-award-line nav__icon"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link" data-scroll>
+                            <i class="ri-mail-send-line nav__icon"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
                 </div>
-                <div class="nav_menu">
-                    <ul class="menu_lists flex_between">
-                        <li class="menu_item">
-                            <a href="#home" class="menu_link active" data-scroll>Home</a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#about" class="menu_link" data-scroll>About us</a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#Skills" class="menu_link" data-scroll>Skills</a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#portfolio" class="menu_link" data-scroll>Project</a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#testimonial" class="menu_link" data-scroll>Technology</a>
-                        </li>
-                        <li class="menu_item">
-                            <a href="#contact" class="menu_link" data-scroll>Contact</a>
-                        </li>
+            </div>
+
+            <div class="nav__buttons">
+                <!-- theme button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <!-- menu button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div id="icon-container"></div>
+            <div class="home__container container grid section__border">
+                <div class="home__data grid">
+                    <h1 class="home__title">Hi, I'm Arshad<br>Full Stack Developer</h1>
+                    <div class="home__blob grid">
+                        <div class="home__perfil">
+                            <img src="assets/img/profile-resize.png" alt="">
+                        </div>
+                        <img src="assets/img/shape-wawes.svg" alt="" class="home__shape-wawes">
+                        <img src="assets/img/shape-circle.svg" alt="" class="home__shape-circle">
+                    </div>
+                    <ul class="home__social">
+                        <a href="https://www.linkedin.com/in/arshad-ali-khan/" class="home__social-link"
+                            target="_blank">
+                            <i class="ri-linkedin-box-line"></i>
+                        </a>
+                        <a href="https://github.com/ARSHADKHAN615" class="home__social-link" target="_blank">
+                            <i class="ri-github-line"></i>
+                        </a>
+                        <a href="https://twitter.com/ArShaDk68351429" class="home__social-link" target="_blank">
+                            <i class="ri-twitter-line"></i>
+                        </a>
                     </ul>
                 </div>
-                <div class="toggle">
-                    <i class='bx bx-menu bx-md'></i>
-                </div>
-            </nav>
-        </div>
-        <!-- NAVIGATION COMPLETE -->
-        <!-- HERO SECTION START  -->
-        <section class="hero_section" id="home">
-            <div class="hero_content inner flex_between">
-                <div class="hero_info">
-                    <div class="hero-text">
-                        <h3>Hello,My Name is</h3>
-                        <h1 class="tlt" data-in-effect="bounceInLeft">Arshad Khan</h1>
-                        <h2>Full Stack Web Developer</h2>
-                        <a href="https://arshadkhan.me/MyResume/" target="_ars"><button class="btn">See My
-                                Resume</button></a>
-                    </div>
-                    <div class="hero-social flex_between">
-                        <a href="https://github.com/ARSHADKHAN615" class="h_social_icons" target="_ars"><i
-                                class='bx bxl-github bx-md'></i></a>
-                        <a href="https://stackoverflow.com/users/14374730/arshad-khan" class="h_social_icons"
-                            target="_ars">
-                            <i class='bx bxl-stack-overflow bx-md'></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/arshad-ali-khan/" class="h_social_icons"
-                            target="_ars"><i class='bx bxl-linkedin bx-md'></i></a>
-                    </div>
-                </div>
-                <div class="hero_img">
-                    <img src="img/profile.png" alt="">
-                </div>
-            </div>
-        </section>
-        <!-- HERO SECTION COMPLETE  -->
-        <!-- ABOUT SECTION START  -->
-        <section class="about_section section" id="about">
-            <span class="section_subtitle">My History</span>
-            <h1 class="section_title">About me</h1>
-            <div class="about_container inner flex_between">
-                <div class="about_info flex_between">
+
+                <!--==================== HOME INFO 1 ====================-->
+                <div class="home__info">
                     <div>
-                        <h2 class="about_title">Hello, I am </h2>
-                        <p>full stack 😁web developer and very😎 passionate with coding and programing ! I am 🏎️fast
-                            learner and every ⏳time exciting for new things.</p>
+                        <h3 class="home__info-title">Biography</h3>
+                        <p class="home__info-description">2023 graduate with a passion for creating user-friendly,
+                            web solutions. And solved 250+ DSA problems on leetcode, codestudio. Committed to continuous
+                            learning and professional growth. </p>
+
                     </div>
-                    <div class="about_data">
-                        <h3>07+</h3>
-                        <span>Frontend Project</span>
+                    <div>
+                        <h3 class="home__info-title">Contact</h3>
+                        <p class="home__info-description">Ahmedabad, Gujarat, India
+                            <br>
+                            <a href="mailto:arshadkhan92707@gmail.com" class="contact__data-info">
+                                arshadkhan92707@gmail.com
+                            </a>
+                            <br>
+                            <a href="tel:+91 9558272662" class="contact__data-info">
+                                +91 9558272662
+                            </a>
+
+                        </p>
+
                     </div>
-                    <div class="about_data">
-                        <h3>08+</h3>
-                        <span>Javascript Projects</span>
+                    <div>
+                        <h3 class="home__info-title">Tech Stack</h3>
+                        <p class="home__info-description">MERN Stack,LAMP Stack,TALL Stack
+                            Javascript,React Js,Node Js,Express Js,
+                            PHP,MySQL
+                        </p>
+
                     </div>
-                    <div class="about_data">
-                        <h3>04+</h3>
-                        <span>Backend Project</span>
+                </div>
+                <!--==================== HOME INFO 2 ====================-->
+                <div class="home__info">
+                    <div>
+                        <h3 class="home__info-title">Industry Experience</h3>
+                        <p class="home__info-number">1+</p>
+                    </div>
+                    <div>
+                        <h3 class="home__info-title">Completed DSA Problems</h3>
+                        <p class="home__info-number">250+</p>
+                    </div>
+                    <div>
+                        <h3 class="home__info-title">Completed Projects</h3>
+                        <p class="home__info-number">10+</p>
                     </div>
                 </div>
 
-                <div class="about_img flex_between">
-                    <img src="img/DSC_5072 (2).jpg" alt="">
-                </div>
             </div>
-            <!-- QUALIFICATION SECTION START  -->
-            <main class="qualification_section section">
-                <span class="section_subtitle">Experience and Education</span>
-                <h1 class="section_title">Qualification</h1>
-                <div class="qualification_container inner flex_between">
+        </section>
 
-                    <div class="Work_title">
-                        <h1><i class='bx bx-briefcase-alt-2'></i>Work Experience</h1>
+        <h1 class="side-title move-title">
+            ARSHAD KHAN🌟 IS THE 🌟BEST SOFTWARE 🌟ENGINEER IN THE WORLD
+        </h1>
+        <!--==================== SKILLS ====================-->
+        <section class="skills section" id="skills">
 
-                        <div class="qualification_data">
-                            <h2>Backend Developer</h2>
-                            <div class="qualification_box flex_between">
-                                <h4><i class='bx bx-briefcase-alt'></i>Alakmalak Technologies Pvt. Ltd.</h4>
-                                <h4><i class='bx bx-calendar-alt'></i>Apr 2021 - Present</h4>
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">My technical level</span>
+            <div class="skill_container container section__border">
+                <div class="skill__content">
+                    <div class="skill__card">
+                        <div class="skill__card__header">
+                            <div class="skill__image ">
+                                <img src="assets/img/web-template.png" alt="">
                             </div>
+                            <h1>
+                                Frontend Development
+                            </h1>
+                        </div>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Tools & Tech Stack
+                            </h4>
+                            <p class="card__description">
+                                For Frontend Development I Use HTML, CSS, Javascript, React Js, Redux Toolkit,Ant
+                                Design, Tailwind CSS,Bootstrap etc.
+                            </p>
                         </div>
                     </div>
-                    <div class="Work_title">
-                        <h1><i class='bx bx-book-bookmark'></i>Education</h1>
-
-                        <div class="qualification_data">
-                            <h2>12th High Secondary</h2>
-                            <div class="qualification_box flex_between">
-                                <h4><i class='bx bx-briefcase-alt'></i>Swaminaraya School</h4>
-                                <h4><i class='bx bx-calendar-alt'></i>April 2017 - Mar 2018</h4>
+                    <div class="skill__card">
+                        <div class="skill__card__header">
+                            <div class="skill__image ">
+                                <img src="assets/img/cloud-server.png" alt="">
                             </div>
+                            <h1>
+                                Backend Development
+                            </h1>
                         </div>
-                        <div class="qualification_data">
-                            <h2>Graduation</h2>
-                            <div class="qualification_box flex_between">
-                                <h4><i class='bx bx-briefcase-alt'></i>Ahmedabad College</h4>
-                                <h4><i class='bx bx-calendar-alt'></i>Jun 2018 - Aug 2021</h4>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Tools & Tech Stack
+                            </h4>
+                            <p class="card__description">
+                                For Backend Development I Use Node Js, Express Js, MongoDB, Php, Laravel, MySQL,
+                                Firebase etc.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill__card">
+                        <div class="skill__card__header">
+                            <div class="skill__image ">
+                                <img src="assets/img/binary-coding.png" alt="">
                             </div>
+                            <h1>
+                                Problem Solving, Debugging
+                            </h1>
                         </div>
-                        <div class="qualification_data">
-                            <h2>MCA</h2>
-                            <div class="qualification_box flex_between">
-                                <h4><i class='bx bx-briefcase-alt'></i>R B Institute Of Management Studies</h4>
-                                <h4><i class='bx bx-calendar-alt'></i>Oct 2021 - Mar 2023</h4>
-                            </div>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Tools & Tech Stack
+                            </h4>
+                            <p class="card__description">
+                                I love to learn new things.And have done <b> 250+ DSA problems </b>on Leetcode and
+                                CodeStudio.
+                            </p>
                         </div>
-
                     </div>
-                </div>
-            </main>
-            <!-- QUALIFICATION SECTION COMPLETE  -->
-        </section>
-        <!-- ABOUT SECTION COMPLETE  -->
 
-        <!-- SERVICES SECTION START  -->
-        <section class="services_section section" id="Skills">
-            <span class="section_subtitle">This My</span>
-            <h1 class="section_title">Skills</h1>
-            <div class="service_boxes flex_between inner">
-                <div class="service_box">
-                    <h2 class="service_title">
-                        <img src="img/icons8-web-design-96.png" alt="server" style="margin: auto;" width="70px"> Front
-                        Development
-                    </h2>
-                    <p class="service_txt">
-                        I Use HTML,CSS,BOOTSTRAP,JAVASCRIPT And Sometime React Js For Frontend Development.
-                    </p>
-                    <button class="btn2">
-                        Know More
-                    </button>
-                </div>
-                <div class="service_box">
-                    <h2 class="service_title">
-                        <img src="img/icons8-server-64.png" alt="server" style="margin: auto;" width="70px"> Backend
-                        Development
-                    </h2>
-
-                    <p class="service_txt">
-                        I Use PHP, And PHP FRAMEWORK LARAVEL,Mysql Database For Backend Development.
-                    </p>
-                    <button class="btn2">
-                        Know More
-                    </button>
-                </div>
-                <div class="service_box">
-                    <h2 class="service_title">
-                        <img src="img/icons8-wordpress-96.png" alt="server" style="margin: auto;" width="70px">
-                        WordPress
-                    </h2>
-
-                    <p class="service_txt">
-                        Basic Knowledge Theme-Plugin-Page-Post in WordPress And I Made Some Basic Project
-                    </p>
-                    <button class="btn2">
-                        Know More
-                    </button>
                 </div>
             </div>
-            <!-- PROJECTS BANNER START  -->
-            <main class="project_section section">
-                <div class="project_tumbling inner flex_between">
-                    <i class='bx bx-chat project_icon'></i>
-                    <div class="project_data">
-                        <h1>Project in mind</h1>
-                        <span style="margin-top:10px; display:block;">If You Choose Me,it will be a Matter of Great
-                            Pride For Me.
-                            </>
-                    </div>
-                    <a href="#contact" class="hire_btn" data-scroll>
-                        Hire me
-                    </a>
+            <div class="background-shape-container">
+                <div class="background-shape">
+                    <img src="./assets/img/html3d.png" alt="" width="250px" height="250px">
                 </div>
-            </main>
-            <!-- PROJECTS BANNER COMPLETE  -->
-        </section>
-        <!-- SERVICES SECTION COMPLETE  -->
-
-        <!-- PORTFOLIO BANNER START  -->
-        <section class="portfolio_section section" id="portfolio">
-            <span class="section_subtitle">My Top Project</span>
-            <h1 class="section_title">Project</h1>
-            <div class="portfolio_nav inner flex_around">
-                <div class="portfolio_item portfolio_active" data-filter="all">All</div>
-                <div class="portfolio_item" data-filter=".Game">JS Game</div>
-                <div class="portfolio_item" data-filter=".jsp">JS Project</div>
-                <div class="portfolio_item" data-filter=".lp">One Page</div>
-                <div class="portfolio_item" data-filter=".app">App</div>
+                <div class="background-shape">
+                    <img src="./assets/img/javascript3d.png" alt="" width="250px" height="250px">
+                </div>
+                <div class="background-shape">
+                    <img src="./assets/img/c++3d.png" alt="" width="250px" height="250px">
+                </div>
             </div>
-            <div class="portfolio_card_container inner flex_between">
-                <div class="portfolio_card mix Game">
-                    <a href="https://arshadkhan615.github.io/Pokemon" target="_ars"><img class="port_card_img"
-                            src="img/project-1.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">Pokemon Game</span>
-                        <h2 class="card_description">This Is Javascript Game,Use Keyboard<br> Up-Down-Left-Right Key And
-                            Play This Game, Make Point And Enjoy,<br>Please Check Once.
-                        </h2>
-                        <a href="https://arshadkhan615.github.io/Pokemon" target="_ars" class="card_link">View Site<i
-                                class='bx bx-right-arrow-alt bx-sm'></i></a>
+        </section>
+
+        <!--==================== QUALIFICATION ====================-->
+        <section class="qualification section" id="qualification">
+
+            <h2 class="section__title">Qualification</h2>
+            <span class="section__subtitle">My personal journey</span>
+            <div class="qualification_container container grid section__border">
+
+                <div class="Work_title">
+                    <h1><i class="ri-hotel-line"></i>Work Experience</h1>
+
+                    <div class="qualification_data">
+                        <h2>Backend Developer</h2>
+                        <div class="qualification_box">
+                            <h4><i class="ri-tools-line"></i>Alakmalak Technologies Pvt. Ltd.</h4>
+                            <h4><i class="ri-calendar-2-line"></i>Apr 2021 - Dec 2022</h4>
+                        </div>
+                    </div>
+                    <div class="qualification_data">
+                        <h2>Teaching Assistant</h2>
+                        <div class="qualification_box">
+                            <h4><i class="ri-tools-line"></i>Coding Ninjas</h4>
+                            <h4><i class="ri-calendar-2-line"></i>Oct 2022 - Jan 2023</h4>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio_card mix Game">
-                    <a href="https://arshadkhan615.github.io/Scramble-Game" target="_ars"><img class="port_card_img"
-                            src="img/project-2.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">Scramble Game</span>
-                        <h2 class="card_description">This JS Scramble Game,Random Programing lang. Name and Answer this
-                            name And Play This Game,Make Point And Enjoy.
-                        </h2>
-                        <a href="https://arshadkhan615.github.io/Scramble-Game" target="_ars" class="card_link">View
-                            Site<i class='bx bx-right-arrow-alt bx-sm'></i></a>
+                <div class="Work_title">
+                    <h1><i class="ri-book-mark-line"></i>Education</h1>
+
+                    <div class="qualification_data">
+                        <h2>12th High Secondary</h2>
+                        <div class="qualification_box">
+                            <h4><i class="ri-quill-pen-line"></i>Swaminaraya School</h4>
+                            <h4><i class="ri-calendar-2-line"></i>April 2017 - Mar 2018</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio_card mix jsp">
-                    <a href="https://arshadkhan615.github.io/GitHub-Profiles.github.io" target="_ars"><img
-                            class="port_card_img" src="img/project-3.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">GitHub Profiles Search</span>
-                        <h2 class="card_description">Search GitHub Username And See this user details And his top
-                            repository, Click this repo and see this repo,and best Ui/Ux Expression.</h2>
-                        <a href="https://arshadkhan615.github.io/GitHub-Profiles.github.io" target="_ars"
-                            class="card_link">View
-                            Site<i class='bx bx-right-arrow-alt bx-sm'></i></a>
+                    <div class="qualification_data">
+                        <h2>Graduation</h2>
+                        <div class="qualification_box">
+                            <h4><i class="ri-quill-pen-line"></i>Gujarat University</h4>
+                            <h4><i class="ri-calendar-2-line"></i>Jun 2018 - Aug 2021</h4>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio_card mix jsp">
-                    <a href="https://arshadkhan615.github.io/password-generater" target="_ars"><img
-                            class="port_card_img" src="img/project-4.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">Password Generator</span>
-                        <h2 class="card_description">This Password Generator is very Nice Project,use this Project For
-                            Choose the Strong Password,and Copy the <br>Password Use it.</h2>
-                        <a href="https://arshadkhan615.github.io/password-generater" target="_ars"
-                            class="card_link">View
-                            Site<i class='bx bx-right-arrow-alt bx-sm'></i></a>
+                    <div class="qualification_data">
+                        <h2>MCA</h2>
+                        <div class="qualification_box">
+                            <h4><i class="ri-quill-pen-line"></i>Gujarat Technological University</h4>
+                            <h4><i class="ri-calendar-2-line"></i>Oct 2021 - Mar 2023</h4>
+                        </div>
                     </div>
+
                 </div>
-                <div class="portfolio_card mix jsp">
-                    <a href="https://arshadkhan615.github.io/Boom-Movies-App" target="
-                                  _ars"><img class="port_card_img" src="img/project-5.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">Movies App</span>
-                        <h2 class="card_description">This Movie App Use For Check the Movies Review and his Details,and
-                            Search Movies Name and Check it.And See his Movie Rating.</h2>
-                        <a href="https://arshadkhan615.github.io/Boom-Movies-App" target="
-                                     _ars" class="card_link">View Site<i class='bx bx-right-arrow-alt bx-sm'></i></a>
+            </div>
+        </section>
+
+        <!--==================== SERVICES ====================-->
+        <!-- <section class="services section" id="services">
+
+        </section> -->
+        <h1 class="side-title move-title-2">
+            ARSHAD KHAN🌟 IS THE 🌟BEST SOFTWARE 🌟ENGINEER IN THE WORLD
+        </h1>
+        <!--==================== PROJECTS ====================-->
+        <section class="projects section" id="projects">
+
+            <h2 class="section__title">Projects</h2>
+            <span class="section__subtitle"> My recent work</span>
+            <div class="project_container container section__border">
+                <div class="project__content">
+                    <div class="project__card">
+                        <h1 class="card__title">
+                            Pokemon Game
+                        </h1>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Details about project
+                            </h4>
+                            <p class="card__description">
+                                This Is Javascript Game,Use Keyboard
+                                Up-Down-Left-Right Key And Play This Game, Make Point And Enjoy,
+                                Please Check Once.
+                            </p>
+                        </div>
+                        <div class="actions_btn">
+                            <a href="#" class="btn btn--primary">Live Demo <i class="ri-external-link-line"></i></a>
+                            <a href="#" class="btn btn--primary">Source Code <i class="ri-external-link-line"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio_card mix lp">
-                    <a href="http://arshadkhan.ml" target="_ars"><img class="port_card_img" src="img/project-6.png"
-                            alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">One Page Design</span>
-                        <h2 class="card_description">Awesome Ui And Animated Design, I am Use Best Soft Color
-                            Combination For this Design,And Fully Responsive Design For all Small And Large Device.</h2>
-                        <a href="http://arshadkhan.ml" target="_ars" class="card_link">View Site<i
-                                class='bx bx-right-arrow-alt bx-sm'></i></a>
+                    <div class="project__card">
+                        <h1 class="card__title">
+                            Pokemon Game
+                        </h1>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Details about project
+                            </h4>
+                            <p class="card__description">
+                                This Is Javascript Game,Use Keyboard
+                                Up-Down-Left-Right Key And Play This Game, Make Point And Enjoy,
+                                Please Check Once.
+                            </p>
+                        </div>
+                        <div class="actions_btn">
+                            <a href="#" class="btn btn--primary">Live Demo <i class="ri-external-link-line"></i></a>
+                            <a href="#" class="btn btn--primary">Source Code <i class="ri-external-link-line"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio_card mix lp">
-                    <a href="http://arshadpathan.ml" target="_ars"><img class="port_card_img" src="img/project-8.png"
-                            alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">One Page Design</span>
-                        <h2 class="card_description">Awesome Ui And Animated Design, I am Use Best Soft Color
-                            Combination For this Design,And Fully Responsive Design For all Small And Large Device.</h2>
-                        <a href="http://arshadpathan.ml" target="_ars" class="card_link">View Site<i
-                                class='bx bx-right-arrow-alt bx-sm'></i></a>
+                    <div class="project__card">
+                        <h1 class="card__title">
+                            Pokemon Game
+                        </h1>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Details about project
+                            </h4>
+                            <p class="card__description">
+                                This Is Javascript Game,Use Keyboard
+                                Up-Down-Left-Right Key And Play This Game, Make Point And Enjoy,
+                                Please Check Once.
+                            </p>
+                        </div>
+                        <div class="actions_btn">
+                            <a href="#" class="btn btn--primary">Live Demo <i class="ri-external-link-line"></i></a>
+                            <a href="#" class="btn btn--primary">Source Code <i class="ri-external-link-line"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio_card mix lp">
-                    <a href="https://arshadkhan.cf/site-1" target="_ars"><img class="port_card_img"
-                            src="img/project-9.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">Dark-Light Mode Page</span>
-                        <h2 class="card_description">This Dark-Light Mode Functionality is Awesome.I use Bootstrap For
-                            this Project,And Fully Responsive Design,<br>And Awesome Ui</h2>
-                        <a href="https://arshadkhan.cf/site-1" target="_ars" class="card_link">View Site<i
-                                class='bx bx-right-arrow-alt bx-sm'></i></a>
-                    </div>
-                </div>
-                <div class="portfolio_card mix lp">
-                    <a href="https://webkhan.ml/site-2/" target="_ars"><img class="port_card_img"
-                            src="img/project-7.png" alt=""></a>
-                    <div class="card_info">
-                        <span class="card_title">3D Landing Page</span>
-                        <h2 class="card_description">This Basic 3D Animated Icons Design I use Glassmorphism For Mobile
-                            Menu,
-                            <br>And Fully Responsive Design,<br>And Awesome Ui
-                        </h2>
-                        <a href="https://webkhan.ml/site-2/" target="_ars" class="card_link">View Site<i
-                                class='bx bx-right-arrow-alt bx-sm'></i></a>
-                    </div>
-                </div>
-                <div class="portfolio_card mix app"
-                    style="text-align: center; display: flex; height: 100%; width: 100%;">
-                    <!-- <a href="https://webkhan.ml/site-2/" target="_ars"><img class="port_card_img" src="img/project-7.png" alt=""></a> -->
-                    <div class="card_info">
-                        <h1 class="card_title">Backend Projects Coming Soon</h1>
-                        <h2 class="card_description">Backend Projects are Ready But Deploying Work in Progress
-                        </h2>
-                        <!-- <a href="https://webkhan.ml/site-2/" target="_ars" class="card_link">View Site<i
-                                class='bx bx-right-arrow-alt bx-sm'></i></a> -->
+                    <div class="project__card">
+                        <h1 class="card__title">
+                            Pokemon Game
+                        </h1>
+                        <div class="card__data">
+                            <h4 class="card__subtitle">
+                                Details about project
+                            </h4>
+                            <p class="card__description">
+                                This Is Javascript Game,Use Keyboard
+                                Up-Down-Left-Right Key And Play This Game, Make Point And Enjoy,
+                                Please Check Once.
+                            </p>
+                        </div>
+                        <div class="actions_btn">
+                            <a href="#" class="btn btn--primary">Live Demo <i class="ri-external-link-line"></i></a>
+                            <a href="#" class="btn btn--primary">Source Code <i class="ri-external-link-line"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- PORTFOLIO BANNER COMPLETE  -->
-        <!-- TESTIMONIAL BANNER COMPLETE  -->
-        <section class="testimonial_section section" id="testimonial">
-            <span class="section_subtitle">My Top Technology</span>
-            <h1 class="section_title">Technology</h1>
 
-            <div class="testimonial_container inner swiper">
-                <div class="swiper-wrapper">
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-html-5-144.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">HTML</h4>
-                        <span>MARKUP LANG.</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-css3-144.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">CSS</h4>
-                        <span>Style Sheets</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-javascript-144.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">JAVASCRIPT</h4>
-                        <span>PROGRAMING LANG.</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-bootstrap-144.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">BOOTSTRAP</h4>
-                        <span>Css FRAMEWORK</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-jquery-150.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">JQUERY</h4>
-                        <span>Js Library</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-react-native-144.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">REACT JS</h4>
-                        <span>Js Library</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-php-logo-160.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">PHP</h4>
-                        <span>PROGRAMING LANG.</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-laravel-96.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">LARAVEL</h4>
-                        <span>MVC FRAMEWORK</span>
-                    </div>
-                    <div class="testimonial_card swiper-slide"><img src="img/icons8-mysql-logo-150.png" alt=""
-                            class="testimonial_img">
-                        <h4 class="testimonial_name">MYSQL</h4>
-                        <span>DATABASE</span>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-        <!-- TESTIMONIAL BANNER COMPLETE  -->
-
-        <section class="contact_section section" id="contact">
-            <span class="section_subtitle">For Hire Me</span>
-            <h1 class="section_title">Contact</h1>
-            <div class="contact_boxes inner flex_between">
-                <div class="contact_box">
-                    <a href="https://goo.gl/maps/LcRJu7TtpyU2fdv59" target="_ars">
-                        <i class='bx bxs-home-circle bx-md contact_icons'></i>
-                        <h1 class="contact_box_title">Location</h1>
-                        <span class="contact_dec">Ahmedabad,Gujarat</span>
-                    </a>
-                </div>
-                <div class="contact_box">
-                    <a href="tel:+91 9558272662">
-                        <i class='bx bxs-phone-call  bx-md contact_icons'></i>
-                        <h1 class="contact_box_title">Phone</h1>
-                        <span class="contact_dec">+91 9558272662</span>
-                    </a>
-                </div>
-                <div class="contact_box">
-                    <a href="mailto:arshadkhan92707@gmail.com">
-                        <i class='bx bxs-envelope bx-md contact_icons'></i>
-                        <h1 class="contact_box_title">Email</h1>
-                        <span class="contact_dec">arshadkhan92707@gmail.com</span>
-                    </a>
-                </div>
-                <div class="contact_box">
-                    <a href="https://wa.link/u5f5hi" target="_ars">
-                        <i class='bx bxl-whatsapp bx-md contact_icons'></i>
-                        <h1 class="contact_box_title">Chat</h1>
-                        <span class="contact_dec">With Me</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="inner contact_form" id="Form-Mess">
-                <div class="inputs_box">
-                    <input type="text" class="my_input" placeholder="Name" id="Name" required>
-                    <input type="email" class="my_input" placeholder="Email" id="Email" required>
-                </div>
-                <div class="inputs_box">
-                    <input type="text" class="my_input" placeholder="Purpose" id="Project">
-                    <input type="tel" class="my_input" placeholder="Phone" id="Phone" required>
-                </div>
-                <textarea cols="30" rows="7" placeholder="Message" id="Message" required></textarea>
-                <button type="submit" class="btn2" onclick="SendMail()">Send Message</button>
-            </div>
+        <!--==================== TESTIMONIAL ====================-->
+        <section class="testimonial section">
 
         </section>
-        <footer>
-            <div class="footer_content inner">
-                <h1>ArShaD kHaN</h1>
-                <span>I am Arshad and this is personal website,consult me here</span>
-                <div class="footer_icons flex_between">
-                    <a href="https://github.com/ARSHADKHAN615" target="_ars"><i class='bx bxl-github bx-md'></i></a>
-                    <a href="https://stackoverflow.com/users/14374730/arshad-khan" target="_ars">
-                        <i class='bx bxl-stack-overflow bx-md'></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/arshad-ali-khan/" target="_ars">
-                        <i class='bx bxl-linkedin-square bx-md'></i>
-                    </a>
+
+        <!--==================== CONTACT ====================-->
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contact Me</h2>
+            <span class="section__subtitle">Get in touch</span>
+            <div class="contact__container container grid section__border">
+                <div class="contact__content">
+                    <h3 class="contact__title">
+                        <i class="ri-chat-3-line"></i> Talk to me
+                    </h3>
+                    <div class="contact__info">
+                        <div class="contact__data">
+                            <span class="contact__data-title">Email</span>
+                            <a href="mailto:arshadkhan92707@gmail.com" class="contact__data-info">arshadkhan92707@gmail.com</a>
+                        </div>
+                        <div class="contact__data">
+                            <span class="contact__data-title">Whatsapp</span>
+                            <span class="contact__data-info">+91 9558272262</span>
+                            <a href="https://wa.link/u5f5hi" class="contact__button" target="_blank">Write me <i
+                                    class="ri-arrow-right-line"></i></a>
+                        </div>
+                        <div class="contact__data">
+                            <span class="contact__data-title">Messenger</span>
+                            <span class="contact__data-info">@arshad</span>
+                            <a href="" class="contact__button" target="_blank">Write me <i
+                                    class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="copyright_txt">
-                    <span><i class='bx bx-copyright'></i>
-                        2021 WebKhan,All right reserved
-                    </span>
+                <div class="contact__content">
+                    <h3 class="contact__title">
+                        <i class="ri-send-plane-line"></i>Write Me
+                    </h3>
+                    <form class="contact__form" id="contact-form">
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Names</label>
+                            <input type="text" class="contact__form-input" placeholder="Name" name="user_name"
+                                id="contact-name" required>
+                        </div>
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Mail</label>
+                            <input type="email" class="contact__form-input" placeholder="Name" name="user_email"
+                                id="contact-email" required>
+                        </div>
+                        <div class="contact__form-div contact__form-area">
+                            <label for="" class="contact__form-tag">Project</label>
+                            <textarea cols="0" rows="7" class="contact__form-input" placeholder="Project"
+                                name="user_project" id="contact-project"></textarea>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LfaCXkkAAAAACqczziDn0aNvfGoxSBVX-oAZlXN"></div>
+                        <p class="contact__message" id="contact-message"></p>
+                        <button class="contact__button">
+                            Submit <i class="ri-arrow-right-up-line"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-        </footer>
+        </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div>
+                <h1 class="footer__title">ArShAd KhAn</h1>
+                <p>Full Stack Developer</p>
+            </div>
+            <ul class="footer__list">
+                <li>
+                    <a href="#home" class="footer__link" data-scroll>Home</a>
+                </li>
+                <li>
+                    <a href="#skills" class="footer__link" data-scroll>Skills</a>
+                </li>
+                <li>
+                    <a href="#qualification" class="footer__link" data-scroll>Qualification</a>
+                </li>
+            </ul>
+            <ul class="footer__social">
+                <a href="https://github.com/ARSHADKHAN615" class="footer__social-link" target="_blank">
+                    <i class="ri-github-fill"></i>
+                </a>
+                <a href="https://twitter.com/ArShaDk68351429" class="footer__social-link" target="_blank">
+                    <i class="ri-twitter-fill"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/arshad-ali-khan/" class="footer__social-link" target="_blank">
+                    <i class="ri-linkedin-fill"></i>
+                </a>
+            </ul>
+            <span class="footer__copy">
+                &copy; CopyRight Arshad Khan, All Right Reserved
+            </span>
+        </div>
+
+    </footer>
+
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up" data-scroll>
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="./assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src=""></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweet-scroll@4.0.0/sweet-scroll.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.18/scrolls.min.js"></script> -->
-    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/vanilla-tilt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/textify.js/dist/Textify.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
