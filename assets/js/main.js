@@ -156,6 +156,7 @@ const sendEmail = (e) => {
         },
         (error) => {
           console.log(error.text);
+          alert(error.text)
           contactMessage.textContent = "Some Issue Please Try Again 🙏";
         }
       );
@@ -245,7 +246,7 @@ sr.reveal(`.home__data,.footer__container`)
 sr.reveal(`.contact__content:nth-child(1)`, { origin: 'left' })
 sr.reveal(`.contact__content:nth-child(2)`, { origin: 'right' })
 sr.reveal(`.home__info div`, { delay: 600 ,origin: 'bottom',interval: 100 });
-sr.reveal(`.skill__card`, { delay: 00 ,origin: 'bottom',interval: 400 });
+sr.reveal(`.skill__card`, { delay: 0 ,origin: 'bottom',interval: 400 });
 
 
 

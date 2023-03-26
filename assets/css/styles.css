@@ -258,7 +258,7 @@ h1.side-title {
   width: max-content;
   color: white;
   background: black;
-  font-size: 8rem;
+  font-size: 6rem;
   font-family: "widescreen-ex", sans-serif;
   /* padding: 0.5rem 0rem; */
 }
@@ -820,7 +820,7 @@ h1.side-title {
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   background-color: hsl(207, 4%, 75%);
 }
 ::-webkit-scrollbar-thumb {
@@ -864,6 +864,9 @@ h1.side-title {
   }
   .nav__list {
     gap: 1.5rem 2rem;
+  }
+  h1.side-title {
+    font-size: 4rem;
   }
 }
 /* For medium devices */
