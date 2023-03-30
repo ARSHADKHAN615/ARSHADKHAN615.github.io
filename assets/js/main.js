@@ -1,3 +1,26 @@
+
+// Fetch All Projects
+const projectsContainer = document.querySelector(".project__content");
+
+const getProjects = async () => {
+  const res = await fetch("https://combative-jay-girdle.cyclic.app/api/dekhojara725177");
+  const data = await res.json();
+  return data;
+};
+
+const showProjects = async () => {
+  const projects = await getProjects();
+  console.log(projects?.frontEnd);
+  const childCards = projectsContainer.children;
+  for (let i = 0; i < childCards.length; i++) {
+    const childCard = childCards[i];
+    childCard.querySelector(".card__title").innerHTML = projects?.frontEnd[i]?.name;   
+    childCard.querySelector(".actions_btn a:nth-child(1)").href = projects?.frontEnd[i]?.liveLink;
+    childCard.querySelector(".actions_btn a:nth-child(2)").href = projects?.frontEnd[i]?.githubLink;
+    childCard.querySelector(".card__description").innerHTML = projects?.frontEnd[i]?.description;
+  }
+};
+showProjects();
 // SWEET SCROLL
 new SweetScroll({
   trigger: '[data-scroll]',
@@ -109,8 +132,6 @@ gsap.to(box_items, {
     end: "+=" + projects.offsetWidth
   }
 });
-
-/*=============== SWIPER TESTIMONIAL ===============*/
 
 
 /*=============== EMAIL JS ===============*/
@@ -246,113 +267,114 @@ sr.reveal(`.home__data,.footer__container`)
 sr.reveal(`.contact__content:nth-child(1)`, { origin: 'left' })
 sr.reveal(`.contact__content:nth-child(2)`, { origin: 'right' })
 sr.reveal(`.home__info div`, { delay: 600 ,origin: 'bottom',interval: 100 });
+sr.reveal(`.nav__item`, { delay: 600 ,origin: 'bottom',interval: 100 });
 sr.reveal(`.skill__card`, { delay: 0 ,origin: 'bottom',interval: 400 });
 
 
 
 /*=============== BACKGROUNDS ICONS ANIMATION ===============*/
-var balls = [];
-var images = [
-  "../assets/img/html3d.png",
-  "../assets/img/css3d.png",
-  "../assets/img/c++3d.png",
-  "../assets/img/javascript3d.png",
-  "../assets/img/react.png",
-  "../assets/img/nodejs.png",
-  "../assets/img/github.png",
-  "../assets/img/mongodb.png",
-  "../assets/img/firebase.png",
-  "../assets/img/git.png",
-  "../assets/img/php.png",
-  "../assets/img/laravel.png",
-  "../assets/img/mysql.png",
-  "../assets/img/expressjs.png",
-];
+// var balls = [];
+// var images = [
+//   "../assets/img/html3d.png",
+//   "../assets/img/css3d.png",
+//   "../assets/img/c++3d.png",
+//   "../assets/img/javascript3d.png",
+//   "../assets/img/react.png",
+//   "../assets/img/nodejs.png",
+//   "../assets/img/github.png",
+//   "../assets/img/mongodb.png",
+//   "../assets/img/firebase.png",
+//   "../assets/img/git.png",
+//   "../assets/img/php.png",
+//   "../assets/img/laravel.png",
+//   "../assets/img/mysql.png",
+//   "../assets/img/expressjs.png",
+// ];
 
-// Set the number of balls to create
-var numBalls = 0;
+// // Set the number of balls to create
+// var numBalls = 0;
 
-// Set the starting position for the balls
-var startingPosition = {
-  x: Math.random() * window.innerWidth,
-  y: Math.random() * window.innerHeight,
-};
+// // Set the starting position for the balls
+// var startingPosition = {
+//   x: Math.random() * window.innerWidth,
+//   y: Math.random() * window.innerHeight,
+// };
 
-// Create the balls and add them to the page
-for (var i = 0; i < numBalls; i++) {
-  // Create a new div element with the class "ball"
-  var ball = document.createElement("div");
-  var img = document.createElement("img");
-  ball.classList.add("ball");
-  // add background image
-  img.src = images[i];
-  img.style.objectFit = "cover";
-  img.style.width = "100%";
-  img.style.height = "100%";
+// // Create the balls and add them to the page
+// for (var i = 0; i < numBalls; i++) {
+//   // Create a new div element with the class "ball"
+//   var ball = document.createElement("div");
+//   var img = document.createElement("img");
+//   ball.classList.add("ball");
+//   // add background image
+//   img.src = images[i];
+//   img.style.objectFit = "cover";
+//   img.style.width = "100%";
+//   img.style.height = "100%";
 
-  ball.appendChild(img);
+//   ball.appendChild(img);
 
-  // Set the initial position for the ball randomly with Math.random()
-  // covert this two line into translate property
+//   // Set the initial position for the ball randomly with Math.random()
+//   // covert this two line into translate property
 
-  ball.style.left = Math.random() * 100 + startingPosition.x + "px";
-  ball.style.top = Math.random() * 100 + startingPosition.y + "px";
+//   ball.style.left = Math.random() * 100 + startingPosition.x + "px";
+//   ball.style.top = Math.random() * 100 + startingPosition.y + "px";
 
 
-  // Generate a random velocity for the ball
-  ball.velocity = {
-    x: Math.random() * 12 - 5,
-    y: Math.random() * 12 - 5,
-  };
+//   // Generate a random velocity for the ball
+//   ball.velocity = {
+//     x: Math.random() * 12 - 5,
+//     y: Math.random() * 12 - 5,
+//   };
 
-  // Add the ball to the page
-  document.getElementById("icon-container").appendChild(ball);
+//   // Add the ball to the page
+//   document.getElementById("icon-container").appendChild(ball);
 
-  // Add the ball to the array
-  balls.push(ball);
-}
+//   // Add the ball to the array
+//   balls.push(ball);
+// }
 
-// Initialize the animation loop
-function animate() {
-  // Loop through all the balls
-  for (var i = 0; i < balls.length; i++) {
-    // Get the current ball
-    var ball = balls[i];
+// // Initialize the animation loop
+// function animate() {
+//   // Loop through all the balls
+//   for (var i = 0; i < balls.length; i++) {
+//     // Get the current ball
+//     var ball = balls[i];
 
-    // Get the current position of the ball
-    var currentPosition = {
-      x: parseInt(ball.style.left),
-      y: parseInt(ball.style.top),
-    };
+//     // Get the current position of the ball
+//     var currentPosition = {
+//       x: parseInt(ball.style.left),
+//       y: parseInt(ball.style.top),
+//     };
 
-    // Calculate the new position of the ball
-    var newPosition = {
-      x: currentPosition.x + ball.velocity.x,
-      y: currentPosition.y + ball.velocity.y,
-    };
+//     // Calculate the new position of the ball
+//     var newPosition = {
+//       x: currentPosition.x + ball.velocity.x,
+//       y: currentPosition.y + ball.velocity.y,
+//     };
 
-    // Check if the new position would be outside the viewport
-    if (
-      newPosition.x < 0 ||
-      newPosition.x + ball.offsetWidth > window.innerWidth
-    ) {
-      ball.velocity.x = -ball.velocity.x;
-    }
-    if (
-      newPosition.y < 0 ||
-      newPosition.y + ball.offsetHeight > window.innerHeight
-    ) {
-      ball.velocity.y = -ball.velocity.y;
-    }
+//     // Check if the new position would be outside the viewport
+//     if (
+//       newPosition.x < 0 ||
+//       newPosition.x + ball.offsetWidth > window.innerWidth
+//     ) {
+//       ball.velocity.x = -ball.velocity.x;
+//     }
+//     if (
+//       newPosition.y < 0 ||
+//       newPosition.y + ball.offsetHeight > window.innerHeight
+//     ) {
+//       ball.velocity.y = -ball.velocity.y;
+//     }
 
-    // Update the position of the ball
-    ball.style.left = newPosition.x + "px";
-    ball.style.top = newPosition.y + "px";
-  }
+//     // Update the position of the ball
+//     ball.style.left = newPosition.x + "px";
+//     ball.style.top = newPosition.y + "px";
+//   }
 
-  requestAnimationFrame(animate);
-}
-animate();
+//   requestAnimationFrame(animate);
+// }
+// animate();
 
 /*=============== FIREFLY ANIMATION ===============*/
 let WIDTH;

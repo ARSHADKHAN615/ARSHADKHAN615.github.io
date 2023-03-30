@@ -625,6 +625,10 @@ h1.side-title {
   color: var(--title-color);
   margin-bottom: 1rem;
 }
+.card__description ul {
+  list-style: outside;
+  padding-left: 1rem;
+}
 .actions_btn {
   display: flex;
   align-items: center;
