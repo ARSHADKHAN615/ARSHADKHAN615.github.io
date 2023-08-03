@@ -10,7 +10,7 @@ const getProjects = async () => {
 
 const showProjects = async () => {
   const projects = await getProjects();
-  console.log(projects?.frontEnd);
+  // console.log(projects?.frontEnd);
   const childCards = projectsContainer.children;
   for (let i = 0; i < childCards.length; i++) {
     const childCard = childCards[i];
@@ -59,22 +59,34 @@ lenis.on("scroll", ({ scroll }) => {
   moveTitle2.style.transform = `translateX(${scroll}px)`;
 });
 
-// Text animation
-new TextifyTitle({
-  selector: ".section__title",
-  duration: 500,
-  threshold: 0,
-  stagger: 20,
-  once: false
-});
+// Text animation with GSAP and Textify
+new Textify({
+  el: '.section__title',
+  observer: {
+    repeat: true,
+    threshold: 0,
+  },
+  animation: {
+    stagger: 0.025,
+    duration: 0.7,
+    ease: 'expo.inOut',
+    animateProps: {"opacity":0,"scale":0}
+  }
+},gsap)
 
-new TextifyTitle({
-  selector: ".home__title",
-  duration: 800,
-  stagger: 50,
-  once: false,
-  threshold: 0,
-});
+new Textify({
+  el: '.home__title',
+  observer: {
+    repeat: true,
+    threshold: 0,
+  },
+  animation: {
+    stagger: 0.15,
+    duration: 0.7,
+    ease: 'expo.inOut',
+    animateProps: {"opacity":0,"scale":0}
+  }
+},gsap)
 
 
 /*=============== SHOW MENU ===============*/
